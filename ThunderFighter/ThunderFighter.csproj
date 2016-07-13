@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2405EF1E-EFA8-4162-8D0F-C5F1AE1FF6A1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ThunderFighter</RootNamespace>
+    <AssemblyName>ThunderFighter</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Exceptions\NameFormatException.cs" />
+    <Compile Include="Models\Bombs\Abstract\Bomb.cs" />
+    <Compile Include="Models\Bombs\PavewayBomb.cs" />
+    <Compile Include="Models\Buildings\SimplePanelka.cs" />
+    <Compile Include="Models\Buildings\SimpleHouse.cs" />
+    <Compile Include="Models\Bullets\Abstract\Bullet.cs" />
+    <Compile Include="Models\Bullets\LightEnemyBullet.cs" />
+    <Compile Include="Models\Bullets\LightweightBullet.cs" />
+    <Compile Include="Common\Constants\Constants.cs" />
+    <Compile Include="Controls\ConsoleKeyboardHandler.cs" />
+    <Compile Include="Controls\ConsoleKeyDownEventArgs.cs" />
+    <Compile Include="Models\Enemies\BadShooterEnemy.cs" />
+    <Compile Include="Models\Enemies\CrazyCrawlEnemy.cs" />
+    <Compile Include="Common\Enums\EntityStateType.cs" />
+    <Compile Include="Models\Enemies\KillerWingEnemy.cs" />
+    <Compile Include="Models\Buildings\Abstract\Building.cs" />
+    <Compile Include="Models\Enemies\Abstract\Enemy.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="Models\Common\Abstract\Entity.cs" />
+    <Compile Include="Field.cs" />
+    <Compile Include="Models\Fighters\Abstract\Fighter.cs" />
+    <Compile Include="Common\Enums\PointsGainType.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Common\Enums\GameLevelType.cs" />
+    <Compile Include="Common\Enums\GameStatusType.cs" />
+    <Compile Include="Contracts\IBomber.cs" />
+    <Compile Include="Contracts\IClearable.cs" />
+    <Compile Include="Contracts\IDrawable.cs" />
+    <Compile Include="Contracts\IMovable.cs" />
+    <Compile Include="Contracts\IBulletShooter.cs" />
+    <Compile Include="Models\Screens\HighScoreScreen.cs" />
+    <Compile Include="Sidebar\Menu.cs" />
+    <Compile Include="MessageBox.cs" />
+    <Compile Include="Common\Enums\MessageBoxPositionType.cs" />
+    <Compile Include="Common\Enums\MessageBoxTextAlignmentType.cs" />
+    <Compile Include="Models\Missiles\Abstract\Missile.cs" />
+    <Compile Include="Models\Missiles\SidewinderMissile.cs" />
+    <Compile Include="Common\Enums\MoveDirectionType.cs" />
+    <Compile Include="Models\Common\Pixel.cs" />
+    <Compile Include="Models\Fighters\ThunderFighterOne.cs" />
+    <Compile Include="Models\Common\Point2D.cs" />
+    <Compile Include="Common\Music\Utils\RandomProvider.cs" />
+    <Compile Include="Common\Music\Utils\ReflectiveArray.cs" />
+    <Compile Include="Models\Buildings\ShootingTower.cs" />
+    <Compile Include="ScoreBoard.cs" />
+    <Compile Include="Common\Music\Utils\ScreenBuffer.cs" />
+    <Compile Include="Models\Screens\GameOverScreen.cs" />
+    <Compile Include="Contracts\IScreen.cs" />
+    <Compile Include="Models\Screens\PauseScreen.cs" />
+    <Compile Include="Models\Screens\Abstract\Screen.cs" />
+    <Compile Include="Models\Screens\WelcomeScreen.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Theme.cs" />
+    <Compile Include="Common\Enums\ThemeColorType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Settings.StyleCop" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Common\Music\backgroundMusic.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
